@@ -23,7 +23,7 @@ import {useBlockProps} from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function Save({attributes, className}) {
-    return <div className={'sgb-message'}>
+    return <div className={'sgb-message-block'}>
         <div className={className}>{attributes.message}</div>
     </div>;
 }

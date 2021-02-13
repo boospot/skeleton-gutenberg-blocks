@@ -73,13 +73,13 @@ class Blocks {
 	}
 
 	/**
-	 * Enqueue assets for public/frontend side
+	 * Enqueue assets for Editor (admin) and Public (frontend) side
 	 * @hooked  enqueue_block_assets
 	 */
 	public function enqueue_block_assets() {
 
 		$style_css = 'style-index.css';
-		wp_register_style(
+		wp_enqueue_style(
 			$this->public_style_handle,
 			$this->get_build_url( $style_css ),
 			array(),
@@ -124,7 +124,7 @@ class Blocks {
 		 * Register Scripts
 		 */
 		$script_asset = require( $script_asset_path );
-		wp_register_script(
+		wp_enqueue_script(
 			$this->editor_script_handle,
 			$this->get_build_url( 'index.js' ),
 			$script_asset['dependencies'],
@@ -149,7 +149,7 @@ class Blocks {
 		 */
 
 		$editor_css = 'index.css';
-		wp_register_style(
+		wp_enqueue_style(
 			$this->editor_style_handle,
 			$this->get_build_url( $editor_css ),
 			array(),
