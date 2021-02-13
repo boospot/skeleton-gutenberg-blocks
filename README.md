@@ -1,5 +1,5 @@
 # sgb
-Sgb for WordPress Plugin Boilerplate with Namespace
+Skeleton for WordPress Plugin Boilerplate with Namespace and Gutenberg Block support
 
 
 Changes to Made:
@@ -16,4 +16,9 @@ Changes to Made:
     * Update Plugin Comment Block in main file `/sgb.php`
 3. After Adding more files as you go, use composer to update autoload if you need to. You shall need to have composer installed on your computer. In Terminal in the plugin directory, run following:
     *  `composer update`
- 
+4. To install NPM dependencies, run the following command:
+   * `npm install`
+5. After doing all the magic of coding, run:
+   * `npm run build`
+6. While developing you may use the watcher by using the command:
+   * `npm run start`

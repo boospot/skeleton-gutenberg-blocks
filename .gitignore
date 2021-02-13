@@ -20,4 +20,6 @@ wp-content/plugins/hello.php
 vendor
 node_modules
 build
+composer.lock
+package-lock.json
 
