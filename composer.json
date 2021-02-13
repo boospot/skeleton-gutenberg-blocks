@@ -1,0 +1,20 @@
+{
+  "name": "boospot/skeleton",
+  "description": "Skeleton for WordPress Plugin Boilerplate with Namespace",
+  "type": "wordpress-plugin",
+  "license": "GPL2",
+  "authors": [
+    {
+      "name": "Rao",
+      "email": "rao@booskills.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "classmap": [
+      "includes",
+      "admin",
+      "public"
+    ]
+  }
+}
