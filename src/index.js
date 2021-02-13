@@ -1,4 +1,4 @@
 /**
- * Import blocks as components.
+ * Import all blocks
  */
-import "./01-static";
+import "./blocks/message";
