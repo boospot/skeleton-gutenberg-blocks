@@ -1,6 +1,6 @@
 {
 	"name": "boospot_sgb",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Skeleton with Plugin boilerplate and gutenberg block support",
 	"author": "BooSpot",
 	"license": "GPL-2.0-or-later",
