@@ -1,10 +1,10 @@
-import { TextControl } from '@wordpress/components';
+import {TextControl} from '@wordpress/components';
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import {useBlockProps} from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,14 +30,16 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, className, setAttributes } ) {
-	return (
-		<div className={ className }>
-			<TextControl
-				label={ __( 'Message', 'gutenpride' ) }
-				value={ attributes.message }
-				onChange={ ( val ) => setAttributes( { message: val } ) }
-			/>
-		</div>
-	);
+export default function Edit({attributes, className, setAttributes}) {
+    return (
+        <div className={'sgb-message-block'}>
+            <div className={className}>
+                <TextControl
+                    label={__('Message', 'gutenpride')}
+                    value={attributes.message}
+                    onChange={(val) => setAttributes({message: val})}
+                />
+            </div>
+        </div>
+    );
 }

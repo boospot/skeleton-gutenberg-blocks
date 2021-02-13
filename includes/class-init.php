@@ -206,7 +206,27 @@ class Init {
 	 */
 	private function define_blocks_hooks() {
 
+		if ( ! function_exists( 'register_block_type' ) ) {
+			// Gutenberg is not active.
+			return;
+		}
+
 		$this->blocks = new Blocks( $this->get_plugin_name(), $this->get_version() );
+
+		/**
+		 * Register Blocks
+		 */
+		$this->loader->add_action( 'init', $this->blocks, 'register_blocks' );
+
+		/**
+		 * Only for Editor (admin)
+		 */
+		$this->loader->add_action( 'enqueue_block_editor_assets', $this->blocks, 'enqueue_block_editor_assets' );
+
+		/**
+		 * For both editor and public (admin and frontend )
+		 */
+		$this->loader->add_action( 'enqueue_block_assets', $this->blocks, 'enqueue_block_assets' );
 
 	}
 

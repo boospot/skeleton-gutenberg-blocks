@@ -67,33 +67,50 @@ class Blocks {
 		$this->version     = $version;
 
 		$this->editor_script_handle = 'sgb-block-editor-script';
-		$this->editor_style_handle  = 'sgb-block-editor';
-		$this->public_style_handle  = 'sgb-block-public';
-
-		$this->register_hooks();
-	}
-
-	/**
-	 * Register Shortcode Hooks
-	 */
-	public function register_hooks() {
-
-		add_action( 'init', [ $this, 'create_block_sgb' ] );
+		$this->editor_style_handle  = 'sgb-block-editor-style';
+		$this->public_style_handle  = 'sgb-block-style';
 
 	}
 
 	/**
-	 * Registers all block assets so that they can be enqueued through Gutenberg in
-	 * the corresponding context.
-	 *
-	 * Passes translations to JavaScript.
+	 * Enqueue assets for both public and admin
+	 * @hooked  enqueue_block_assets
 	 */
-	public function create_block_sgb() {
+	public function enqueue_block_assets() {
 
-		if ( ! function_exists( 'register_block_type' ) ) {
-			// Gutenberg is not active.
-			return;
-		}
+		$style_css = 'style-index.css';
+		wp_register_style(
+			$this->public_style_handle,
+			$this->get_build_url( $style_css ),
+			array(),
+			filemtime( $this->get_build_dir( $style_css ) )
+		);
+
+	}
+
+	/**
+	 * Get Build URL path
+	 */
+	public function get_build_url( $file_name_with_sub_dir ) {
+
+		return SGB_URL_PATH . 'build/' . $file_name_with_sub_dir;
+
+	}
+
+	/**
+	 * Get Build Dir path
+	 */
+	public function get_build_dir( $file_name_with_sub_dir ) {
+
+		return SGB_DIR_PATH . 'build' . DIRECTORY_SEPARATOR . $file_name_with_sub_dir;
+
+	}
+
+	/**
+	 * Enqueue CSS and JS assets for Editor
+	 * @hooked  enqueue_block_editor_assets
+	 */
+	public function enqueue_block_editor_assets() {
 
 		$script_asset_path = $this->get_build_dir( 'index.asset.php' );
 
@@ -116,6 +133,7 @@ class Blocks {
 
 		/**
 		 * Localize Scripts
+		 * Passes translations to JavaScript.
 		 */
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			/**
@@ -123,7 +141,7 @@ class Blocks {
 			 * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
 			 * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
 			 */
-			wp_set_script_translations( 'sgb-block-editor-script', 'dropdown-redirect' );
+			wp_set_script_translations( $this->editor_script_handle, 'sgb' );
 		}
 
 		/**
@@ -138,13 +156,16 @@ class Blocks {
 			filemtime( $this->get_build_dir( $editor_css ) )
 		);
 
-		$style_css = 'style-index.css';
-		wp_register_style(
-			$this->public_style_handle,
-			$this->get_build_url( $style_css ),
-			array(),
-			filemtime( $this->get_build_dir( $style_css ) )
-		);
+	}
+
+	/**
+	 * Registers all block assets so that they can be enqueued through Gutenberg in
+	 * the corresponding context.
+	 *
+	 *
+	 */
+	public function register_blocks() {
+
 
 		// Array of block created in this plugin.
 		$blocks = [
@@ -163,24 +184,6 @@ class Blocks {
 			) );
 		}
 
-
-	}
-
-	/**
-	 * Get Build Dir path
-	 */
-	public function get_build_dir( $file_name_with_sub_dir ) {
-
-		return SGB_DIR_PATH . 'build' . DIRECTORY_SEPARATOR . $file_name_with_sub_dir;
-
-	}
-
-	/**
-	 * Get Build URL path
-	 */
-	public function get_build_url( $file_name_with_sub_dir ) {
-
-		return SGB_URL_PATH . 'build/' . $file_name_with_sub_dir;
 
 	}
 
