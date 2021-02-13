@@ -141,7 +141,7 @@ class Blocks {
 			 * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
 			 * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
 			 */
-			wp_set_script_translations( $this->editor_script_handle, 'text-domain' );
+			wp_set_script_translations( $this->editor_script_handle, 'plugin-text-domain' );
 		}
 
 		/**
