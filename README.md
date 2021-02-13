@@ -8,7 +8,8 @@ Changes to Made:
     * `/sgb.php`
     * `/languages/sgb.pot`
 2. Run Search Replace with **Preserve Case**:
-    * @plugin For Plugin Name `sgb => YourPluginName`
+    * @plugin For Plugin Name `Sgb => YourPluginName`
+    * @plugin For Text Domain `'text-domain' => 'plugin-text-domain'`  
     * @git_author For Github Author: `boospot => YourAuthorName`
     * @author For Author Name: `Rao => YourName`
     * @author For email: `rao@booskills.com => YourEmail`

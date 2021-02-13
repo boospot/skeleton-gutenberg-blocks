@@ -36,7 +36,7 @@ class i18N {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'sgb',
+			'text-domain',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

@@ -93,7 +93,7 @@ class Blocks {
 	 */
 	public function get_build_url( $file_name_with_sub_dir ) {
 
-		return SGB_URL_PATH . 'build/' . $file_name_with_sub_dir;
+		return SGB_URL_PATH . trailingslashit( 'build' ) . $file_name_with_sub_dir;
 
 	}
 
@@ -141,7 +141,7 @@ class Blocks {
 			 * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
 			 * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
 			 */
-			wp_set_script_translations( $this->editor_script_handle, 'sgb' );
+			wp_set_script_translations( $this->editor_script_handle, 'text-domain' );
 		}
 
 		/**
