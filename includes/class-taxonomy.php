@@ -1,13 +1,13 @@
 <?php
 
-namespace Skeleton;
+namespace Sgb;
 // exit if file is called directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // if class already defined, bail out
-if ( class_exists( 'Skeleton\Taxonomy' ) ) {
+if ( class_exists( 'Sgb\Taxonomy' ) ) {
 	return;
 }
 
@@ -15,8 +15,8 @@ if ( class_exists( 'Skeleton\Taxonomy' ) ) {
 /**
  * This class will create meta boxes for Taxonomies
  *
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  * @author     Rao <raoabid491@gmail.com>
  */
 class Taxonomy {

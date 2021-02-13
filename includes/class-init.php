@@ -1,6 +1,6 @@
 <?php
 
-namespace Skeleton;
+namespace Sgb;
 /**
  * The file that defines the core plugin class
  *
@@ -10,8 +10,8 @@ namespace Skeleton;
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  */
 
 /**
@@ -24,8 +24,8 @@ namespace Skeleton;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  * @author     Rao <rao@booskills.com>
  */
 class Init {
@@ -70,15 +70,15 @@ class Init {
 	public function __construct() {
 
 
-		if ( defined( 'SKELETON_VERSION' ) ) {
-			$this->version = SKELETON_VERSION;
+		if ( defined( 'SGB_VERSION' ) ) {
+			$this->version = SGB_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		if ( defined( 'SKELETON_PLUGIN_NAME' ) ) {
-			$this->plugin_name = SKELETON_PLUGIN_NAME;
+		if ( defined( 'SGB_PLUGIN_NAME' ) ) {
+			$this->plugin_name = SGB_PLUGIN_NAME;
 		} else {
-			$this->plugin_name = 'skeleton';
+			$this->plugin_name = 'sgb';
 		}
 
 
@@ -88,7 +88,7 @@ class Init {
 		$this->define_public_hooks();
 		$this->define_taxonomy_hooks();
 
-		do_action( 'skeleton_init_construct' );
+		do_action( 'sgb_init_construct' );
 
 	}
 

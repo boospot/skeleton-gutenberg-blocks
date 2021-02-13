@@ -1,6 +1,6 @@
 {
-  "name": "boospot/skeleton",
-  "description": "Skeleton for WordPress Plugin Boilerplate with Namespace",
+  "name": "boospot/sgb",
+  "description": "Skeleton for WordPress Plugin Boilerplate with Namespace and Gutenberg Block support",
   "type": "wordpress-plugin",
   "license": "GPL2",
   "authors": [

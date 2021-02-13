@@ -1,13 +1,13 @@
 <?php
-namespace Skeleton;
+namespace Sgb;
 /**
  * Fired during plugin deactivation
  *
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  */
 
 /**
@@ -16,8 +16,8 @@ namespace Skeleton;
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  * @author     Rao <rao@booskills.com>
  */
 class Deactivator {

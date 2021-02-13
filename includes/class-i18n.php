@@ -1,5 +1,5 @@
 <?php
-namespace Skeleton;
+namespace Sgb;
 /**
  * Define the internationalization functionality
  *
@@ -9,8 +9,8 @@ namespace Skeleton;
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  */
 
 /**
@@ -20,8 +20,8 @@ namespace Skeleton;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Skeleton
- * @subpackage Skeleton/includes
+ * @package    Sgb
+ * @subpackage Sgb/includes
  * @author     Rao <rao@booskills.com>
  */
 class i18N {
@@ -36,7 +36,7 @@ class i18N {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'skeleton',
+			'sgb',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
