@@ -73,7 +73,7 @@ class Blocks {
 	}
 
 	/**
-	 * Enqueue assets for both public and admin
+	 * Enqueue assets for public/frontend side
 	 * @hooked  enqueue_block_assets
 	 */
 	public function enqueue_block_assets() {

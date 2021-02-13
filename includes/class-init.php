@@ -224,7 +224,7 @@ class Init {
 		$this->loader->add_action( 'enqueue_block_editor_assets', $this->blocks, 'enqueue_block_editor_assets' );
 
 		/**
-		 * For both editor and public (admin and frontend )
+		 * For public/ frontend
 		 */
 		$this->loader->add_action( 'enqueue_block_assets', $this->blocks, 'enqueue_block_assets' );
 
