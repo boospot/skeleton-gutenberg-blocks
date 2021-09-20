@@ -52,7 +52,6 @@ define( 'SKELETON_GUTENBERG_BLOCKS_PLUGIN_NAME', 'skeleton_gutenberg_blocks' );
 define( 'SKELETON_GUTENBERG_BLOCKS_PLUGIN_BASE_NAME', basename( __FILE__ ) );
 
 
-
 /**
  * Plugin base dir path.
  * used to locate plugin resources primarily code files
@@ -72,6 +71,9 @@ define( 'SKELETON_GUTENBERG_BLOCKS_URL_PATH', plugin_dir_url( __FILE__ ) );
 /**
  * Composer Auto Loader
  */
+if ( ! file_exists( 'vendor/autoload.php' ) ) {
+	wp_die( esc_html__( 'Please run composer install before activating plugin.' ) );
+}
 require 'vendor/autoload.php';
 
 /**
