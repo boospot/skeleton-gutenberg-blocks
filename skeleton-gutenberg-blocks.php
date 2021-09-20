@@ -71,7 +71,9 @@ define( 'SKELETON_GUTENBERG_BLOCKS_URL_PATH', plugin_dir_url( __FILE__ ) );
 /**
  * Composer Auto Loader
  */
-if ( ! file_exists( 'vendor/autoload.php' ) ) {
+if ( ! file_exists( plugin_dir_path( __FILE__ ) . 'vendor/autoload.php' ) ) {
+	include_once ABSPATH . 'wp-admin/includes/plugin.php';
+	deactivate_plugins( basename( __FILE__ ) );
 	wp_die( esc_html__( 'Please run composer install before activating plugin.' ) );
 }
 require 'vendor/autoload.php';
