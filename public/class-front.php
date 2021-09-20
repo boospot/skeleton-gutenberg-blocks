@@ -1,14 +1,14 @@
 <?php
 
-namespace Sgb;
+namespace SkeletonGutenbergBlocks;
 /**
  * The public-facing functionality of the plugin.
  *
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Sgb
- * @subpackage Sgb/public
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/public
  */
 
 /**
@@ -17,8 +17,8 @@ namespace Sgb;
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Sgb
- * @subpackage Sgb/public
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/public
  * @author     Rao <rao@booskills.com>
  */
 class Front {
@@ -67,10 +67,10 @@ class Front {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Sgb\Loader as all of the hooks are defined
+		 * defined in SkeletonGutenbergBlocks\Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Sgb\Loader will then create the relationship
+		 * The SkeletonGutenbergBlocks\Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -90,10 +90,10 @@ class Front {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Sgb\Loader as all of the hooks are defined
+		 * defined in SkeletonGutenbergBlocks\Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Sgb\Loader will then create the relationship
+		 * The SkeletonGutenbergBlocks\Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */

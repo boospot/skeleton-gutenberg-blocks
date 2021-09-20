@@ -5,11 +5,13 @@ Skeleton for WordPress Plugin Boilerplate with Namespace and Gutenberg Block sup
 ## Changes Required to start Development:
 
 1. Rename files in:
-    * `/sgb.php`
+    * `/skeleton-gutenberg-blocks.php`
     * `/languages/plugin-text-domain.pot`
    
 2. Run Search Replace with **Preserve Case**:
-    * @plugin For Plugin Name `Sgb => YourPluginName`
+    * @plugin For Class Name `SkeletonGutenbergBlocks => YourPluginName`
+    * @plugin For constants: `SKELETON_GUTENBERG_BLOCKS_ => YOUR_PLUGIN_NAME_`
+    * @plugin For function names `skeleton_gutenberg_blocks to your_plugin_name`
     * @plugin For Text Domain `plugin-text-domain => your-plugin-text-domain`  
     * @git_author For Github Author: `boospot => YourAuthorName`
     * @author For Author Name: `Rao => YourName`
@@ -28,6 +30,11 @@ Skeleton for WordPress Plugin Boilerplate with Namespace and Gutenberg Block sup
    
 6. While developing you may use the watcher by using the command:
    * `npm run start`
+   
+7. To Updates WordPress packages to the latest version:
+   * `npm run packages-update`
+
+8. Complete list of commands can be found here: [https://www.npmjs.com/package/@wordpress/create-block](https://www.npmjs.com/package/@wordpress/create-block) 
 
 ## Steps required to release plugin:
 

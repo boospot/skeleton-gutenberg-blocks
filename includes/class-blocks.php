@@ -1,13 +1,13 @@
 <?php
 
-namespace Sgb;
+namespace SkeletonGutenbergBlocks;
 // exit if file is called directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // if class already defined, bail out
-if ( class_exists( 'Sgb\Blocks' ) ) {
+if ( class_exists( 'SkeletonGutenbergBlocks\Blocks' ) ) {
 	return;
 }
 
@@ -15,8 +15,8 @@ if ( class_exists( 'Sgb\Blocks' ) ) {
 /**
  * This class will create meta boxes for Shortcodes
  *
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  */
 class Blocks {
 
@@ -93,7 +93,7 @@ class Blocks {
 	 */
 	public function get_build_url( $file_name_with_sub_dir ) {
 
-		return SGB_URL_PATH . trailingslashit( 'build' ) . $file_name_with_sub_dir;
+		return SKELETON_GUTENBERG_BLOCKS_URL_PATH . trailingslashit( 'build' ) . $file_name_with_sub_dir;
 
 	}
 
@@ -102,7 +102,7 @@ class Blocks {
 	 */
 	public function get_build_dir( $file_name_with_sub_dir ) {
 
-		return SGB_DIR_PATH . 'build' . DIRECTORY_SEPARATOR . $file_name_with_sub_dir;
+		return SKELETON_GUTENBERG_BLOCKS_DIR_PATH . 'build' . DIRECTORY_SEPARATOR . $file_name_with_sub_dir;
 
 	}
 

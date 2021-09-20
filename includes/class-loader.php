@@ -1,14 +1,14 @@
 <?php /** @noinspection DuplicatedCode */
 
-namespace Sgb;
+namespace SkeletonGutenbergBlocks;
 /**
  * Register all actions and filters for the plugin
  *
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  */
 
 /**
@@ -18,8 +18,8 @@ namespace Sgb;
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  * @author     Rao <rao@booskills.com>
  */
 class Loader {

@@ -11,10 +11,10 @@
  *
  * @link              https://booskills.com/rao
  * @since             1.0.0
- * @package           Sgb
+ * @package           SkeletonGutenbergBlocks
  *
  * @wordpress-plugin
- * Plugin Name:       Sgb
+ * Plugin Name:       SkeletonGutenbergBlocks
  * Plugin URI:        https://boospot.com/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Requires PHP:      7.0
@@ -39,9 +39,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SGB_VERSION', '1.0.0' );
+define( 'SKELETON_GUTENBERG_BLOCKS_VERSION', '1.0.0' );
 
-define( 'SGB_PLUGIN_NAME', 'sgb' );
+define( 'SKELETON_GUTENBERG_BLOCKS_PLUGIN_NAME', 'skeleton_gutenberg_blocks' );
 
 /**
  * Plugin base name.
@@ -49,7 +49,7 @@ define( 'SGB_PLUGIN_NAME', 'sgb' );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SGB_PLUGIN_BASE_NAME', basename( __FILE__ ) );
+define( 'SKELETON_GUTENBERG_BLOCKS_PLUGIN_BASE_NAME', basename( __FILE__ ) );
 
 
 
@@ -59,7 +59,7 @@ define( 'SGB_PLUGIN_BASE_NAME', basename( __FILE__ ) );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SGB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'SKELETON_GUTENBERG_BLOCKS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Plugin url to access its resources through browser
@@ -67,7 +67,7 @@ define( 'SGB_DIR_PATH', plugin_dir_path( __FILE__ ) );
  * Start at version 1.0.0
  */
 /** @noinspection PhpUnused */
-define( 'SGB_URL_PATH', plugin_dir_url( __FILE__ ) );
+define( 'SKELETON_GUTENBERG_BLOCKS_URL_PATH', plugin_dir_url( __FILE__ ) );
 
 /**
  * Composer Auto Loader
@@ -78,20 +78,20 @@ require 'vendor/autoload.php';
  * The code that runs during plugin activation.
  * This action is documented in includes/class-sgb-activator.php
  */
-function sgb_activate() {
-	Sgb\Activator::activate();
+function skeleton_gutenberg_blocks_activate() {
+	SkeletonGutenbergBlocks\Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-sgb-deactivator.php
  */
-function sgb_deactivate() {
-	Sgb\Deactivator::deactivate();
+function skeleton_gutenberg_blocks_deactivate() {
+	SkeletonGutenbergBlocks\Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'sgb_activate' );
-register_deactivation_hook( __FILE__, 'sgb_deactivate' );
+register_activation_hook( __FILE__, 'skeleton_gutenberg_blocks_activate' );
+register_deactivation_hook( __FILE__, 'skeleton_gutenberg_blocks_deactivate' );
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
@@ -106,11 +106,10 @@ register_deactivation_hook( __FILE__, 'sgb_deactivate' );
  *
  * @since    1.0.0
  */
-function run_sgb() {
+function skeleton_gutenberg_blocks() {
 
-	$plugin = new Sgb\Init();
-	$plugin->run();
+	return SkeletonGutenbergBlocks\Init::get_instance();
 
 }
 
-run_sgb();
+skeleton_gutenberg_blocks();

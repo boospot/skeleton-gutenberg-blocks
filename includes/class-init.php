@@ -1,6 +1,6 @@
 <?php
 
-namespace Sgb;
+namespace SkeletonGutenbergBlocks;
 
 /**
  * The file that defines the core plugin class
@@ -11,8 +11,8 @@ namespace Sgb;
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  */
 
 /**
@@ -25,11 +25,20 @@ namespace Sgb;
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  * @author     Rao <rao@booskills.com>
  */
 class Init {
+
+	/**
+	 * The instance of this class
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      object $instance The instance of the current class
+	 */
+	protected static $instance;
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -60,6 +69,26 @@ class Init {
 	protected $version;
 
 	/**
+	 * The admin class of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Admin $admin The current version of the plugin.
+	 */
+	protected $admin;
+
+	/**
+	 * The admin class of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Front $front The current version of the plugin.
+	 */
+	protected $front;
+
+
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -71,15 +100,15 @@ class Init {
 	public function __construct() {
 
 
-		if ( defined( 'SGB_VERSION' ) ) {
-			$this->version = SGB_VERSION;
+		if ( defined( 'SKELETON_GUTENBERG_BLOCKS_VERSION' ) ) {
+			$this->version = SKELETON_GUTENBERG_BLOCKS_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		if ( defined( 'SGB_PLUGIN_NAME' ) ) {
-			$this->plugin_name = SGB_PLUGIN_NAME;
+		if ( defined( 'SKELETON_GUTENBERG_BLOCKS_PLUGIN_NAME' ) ) {
+			$this->plugin_name = SKELETON_GUTENBERG_BLOCKS_PLUGIN_NAME;
 		} else {
-			$this->plugin_name = 'sgb';
+			$this->plugin_name = 'skeleton_gutenberg_blocks';
 		}
 
 
@@ -90,7 +119,7 @@ class Init {
 		$this->define_blocks_hooks();
 		$this->define_taxonomy_hooks();
 
-		do_action( 'sgb_init_construct' );
+		do_action( 'skeleton_gutenberg_blocks_init_construct' );
 
 	}
 
@@ -149,7 +178,7 @@ class Init {
 			return null;
 		}
 
-		$plugin_admin = new Admin( $this->get_plugin_name(), $this->get_version() );
+		$this->admin = $plugin_admin = new Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -191,7 +220,7 @@ class Init {
 			return null;
 		}
 
-		$plugin_public = new Front( $this->get_plugin_name(), $this->get_version() );
+		$this->front = $plugin_public = new Front( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -199,7 +228,7 @@ class Init {
 	}
 
 	/**
-	 * Register all of the hooks related to Gutenberg
+	 * Register all the hooks related to Gutenberg
 	 *
 	 * @since    1.0.0
 	 * @access   private
@@ -231,7 +260,7 @@ class Init {
 	}
 
 	/**
-	 * Register all of the hooks related to taxonomies
+	 * Register all the hooks related to taxonomies
 	 *
 	 * @since    1.0.0
 	 * @access   private
@@ -244,12 +273,26 @@ class Init {
 	}
 
 	/**
-	 * Run the loader to execute all of the hooks with WordPress.
+	 * Run the loader to execute all the hooks with WordPress.
 	 *
 	 * @since    1.0.0
 	 */
 	public function run() {
 		$this->loader->run();
+	}
+
+	/**
+	 * get the instance of the main plugin class
+	 */
+	public static function get_instance() {
+
+		if ( ! self::$instance ) {
+			self::$instance = new self();
+			self::$instance->run();
+		}
+
+		return self::$instance;
+
 	}
 
 

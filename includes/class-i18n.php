@@ -1,5 +1,5 @@
 <?php
-namespace Sgb;
+namespace SkeletonGutenbergBlocks;
 /**
  * Define the internationalization functionality
  *
@@ -9,8 +9,8 @@ namespace Sgb;
  * @link       https://booskills.com/rao
  * @since      1.0.0
  *
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  */
 
 /**
@@ -20,8 +20,8 @@ namespace Sgb;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Sgb
- * @subpackage Sgb/includes
+ * @package    SkeletonGutenbergBlocks
+ * @subpackage SkeletonGutenbergBlocks/includes
  * @author     Rao <rao@booskills.com>
  */
 class i18N {
