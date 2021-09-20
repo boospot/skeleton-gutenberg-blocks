@@ -1,4 +1,4 @@
-# sgb
+# SkeletonGutenbergBlocks
 Skeleton for WordPress Plugin Boilerplate with Namespace and Gutenberg Block support
 
 
